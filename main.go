@@ -2,6 +2,7 @@ package main
 
 import (
 	"apiserver/config"
+	"apiserver/model"
 	"errors"
 	"github.com/lexkong/log"
 	"github.com/spf13/pflag"
@@ -25,6 +26,10 @@ func main() {
 	if err := config.Init(*cfg); err != nil {
 		panic(err)
 	}
+
+	// init DB
+	model.DB.Init()
+	defer model.DB.Close()
 
 	// Set gin mode.
 	gin.SetMode(viper.GetString("runmode"))
