@@ -34,6 +34,8 @@ func openDB(username, password, addr, name string) *gorm.DB {
 		log.Errorf(err, "Database connection failed. Database name: %s", name)
 	}
 
+	log.Infof("Database connection succeed: %v", db)
+
 	setupDB(db)
 	return db
 }
