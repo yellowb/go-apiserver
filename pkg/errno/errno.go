@@ -39,7 +39,7 @@ func (err *Err) Addf(format string, args ...interface{}) *Err {
 }
 
 func (err *Err) Error() string {
-	return fmt.Sprint("Err - code: %d, message: %s, error: %s", err.Code, err.Message, err.Err)
+	return fmt.Sprintf("Err - code: %d, message: %s, error: %s", err.Code, err.Message, err.Err)
 }
 
 func Decode(err error) (int, string) {

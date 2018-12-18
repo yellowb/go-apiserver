@@ -7,6 +7,6 @@ var (
 	ErrBind             = &Errno{Code: 10002, Message: "Error occurred while binding the request body to the struct."}
 
 	// Create user errors
-	UserFieldMissed = &Errno{Code: 20102, Message: "The user was missed."}
+	UserFieldMissed = &Errno{Code: 20102, Message: "The username was missed."}
 	PwdFieldMissed = &Errno{Code: 20103, Message: "The password was missed."}
 )
